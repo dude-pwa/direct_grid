@@ -13,7 +13,12 @@ Ext.onReady(function() {
 		autoLoad: true,
 		proxy: {
 			type: 'direct',
-			directFn: QueryDatabase.getResults,
+			api: {
+			        create: QueryDatabase.createRecord,
+			        read: QueryDatabase.getResults,
+			        update: QueryDatabase.updateRecords,
+			        destroy: QueryDatabase.destroyRecord
+			    }
 		}
 	});
 	
